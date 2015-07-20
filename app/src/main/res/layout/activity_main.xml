@@ -6,6 +6,12 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvPhoneName" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -17,27 +23,44 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Server"
-            android:id="@+id/button"
+            android:id="@+id/btServer"
             android:layout_margin="1dp"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="As Client"
-            android:id="@+id/button2"
             android:layout_weight="1"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp" />
+            android:onClick="buttonServerClicked"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Dconnect"
-            android:id="@+id/button3"
+            android:id="@+id/btDisconnect"
             android:layout_margin="1dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="buttonDisconnectClicked"
+            android:enabled="false" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/serverNameEt"
+            android:layout_weight="4"
+            android:hint="host name" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="As Client"
+            android:id="@+id/btClient"
+            android:layout_weight="2"
+            android:onClick="buttonClientClicked"
+            android:layout_marginLeft="2dp" />
     </LinearLayout>
 
     <ScrollView
@@ -49,15 +72,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis rutrum purus. Duis augue nulla, tincidunt eget semper sit amet, euismod convallis ex. Nulla semper lorem ut elit blandit ultricies. Cras tincidunt mi sed erat convallis, vitae scelerisque eros rhoncus. Duis imperdiet rutrum dui, dictum ullamcorper mauris fringilla eu. Proin et ligula vitae urna ultricies tincidunt ut vitae erat. Praesent at fringilla dui, a mollis eros. Ut egestas pretium mi vel accumsan. Proin non varius diam. Proin non arcu elit. Ut pretium ipsum vel mi placerat laoreet. Duis aliquet ligula ipsum, eu commodo ex sagittis at.  Etiam rutrum odio tellus, sed cursus nisi iaculis non. Praesent imperdiet lacus sollicitudin diam tristique pulvinar. Cras porta euismod egestas. Nullam facilisis tempus enim, tempus maximus dolor pretium quis. Donec viverra fringilla libero, a consectetur augue tincidunt ac. Donec porta lectus in massa imperdiet, et porta nisl tempor. Etiam vel sapien at leo dapibus dapibus eu id nulla. Duis dolor massa, auctor auctor purus ut, sodales rhoncus dolor. Nullam suscipit sagittis malesuada. Donec vel interdum neque. In hac habitasse platea dictumst. Mauris hendrerit malesuada risus, sed ornare nibh porta at. Nulla facilisi. Donec tincidunt efficitur auctor. In venenatis lectus quis fringilla euismod. Aliquam vitae."
-            android:id="@+id/textView" />
+            android:id="@+id/tvConversation"
+            android:enabled="false" />
     </ScrollView>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/msgET"
+        android:layout_weight="1" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:text="Send"
-        android:id="@+id/button4"
-        android:layout_weight="1" />
+        android:id="@+id/btSend"
+        android:layout_weight="1"
+        android:onClick="buttonSendClicked"
+        android:enabled="false" />
 
 </LinearLayout>
